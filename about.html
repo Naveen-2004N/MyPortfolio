@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Naveen M Achari</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* MERN Tooltip Feature Styles */
+        .tooltip-container {
+            border: 1px solid #23b9eb33;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 19px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 24px 15px; /* Reduced padding */
+            background: #1f26674d;
+        }
+        .tooltip-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            font-size: 24px; /* Slightly smaller text */
+            font-weight: 700;
+            cursor: default;
+            position: relative;
+        }
+        .mongodb { color: #47a248; }
+        .react { color: #61dafb; }
+        .node { color: #8cc84b; }
+        .express { color: #fff; }
+
+        .tooltip {
+            font-size: 11px;
+            position: absolute;
+            top: 10px;
+            border-radius: 20px;
+            padding: 4px 10px;
+            opacity: 0;
+            transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .tooltip-icon:hover .tooltip {
+            top: -35px;
+            opacity: 1;
+        }
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            height: 8px;
+            width: 8px;
+            transform: rotate(45deg) translateX(-50%);
+            left: 50%;
+            bottom: -6px;
+            background-color: inherit;
+        }
+        .mongodb .tooltip { background-color: #47a248; color: white; }
+        .express .tooltip { background-color: white; color: black; }
+        .react .tooltip { background-color: #61dafb; color: black; }
+        .node .tooltip { background-color: #8cc84b; color: white; }
+
+        .home-btn:hover .home-icon {
+            transform: translateX(-4px);
+        }
+
+        /* Force single view on large screens */
+        @media (min-height: 700px) {
+            .main-container {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#111] text-white font-['Nunito'] relative">
+    
+    <nav class="absolute top-6 left-4 md:left-12 z-50">
+        <a href="index.html" class="home-btn flex items-center gap-2 group bg-[#1f266780] border border-[#23b9eb33] px-4 py-2 rounded-full text-xs font-bold text-[#23b9eb] transition-all hover:bg-[#23b9eb] hover:text-[#111] hover:shadow-[0_0_20px_rgba(35,185,235,0.4)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="home-icon w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span>Back to Home</span>
+        </a>
+    </nav>
+
+    <div class="main-container">
+        <section class="max-w-screen-xl mx-auto px-4 py-8">
+            <div class="text-center mb-8">
+                <p class="text-gray-400 text-xs uppercase tracking-widest">Get To Know</p>
+                <h2 class="text-3xl font-bold text-[#23b9eb] mt-1">About Me</h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+                <div class="relative w-full md:w-2/5 flex justify-center">
+                    <div class="relative w-56 h-56 md:w-72 md:h-72 bg-gradient-to-br from-[#1788ae] to-[#1f2667] rounded-2xl rotate-3">
+                        <img src="./assets/images/MyImage.png" alt="Naveen M Achari" 
+                             class="absolute inset-0 w-full h-full object-cover rounded-2xl -rotate-3 transition-transform hover:rotate-0 duration-300 shadow-2xl">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/5 space-y-6">
+                    <p class="text-gray-300 leading-relaxed text-base md:text-lg">
+                        I am a <strong>MERN Stack Developer</strong> and Software Development Intern specializing in building scalable, real-time web applications. My expertise includes MongoDB, Express.js, React, and Node.js, with hands-on experience developing a real-time chat app, an AI interview platform, and a secure e-commerce site.
+                    </p>
+
+                    <div>
+                        <h3 class="text-[#23b9eb] font-bold mb-3 uppercase tracking-wider text-xs">Core Stack</h3>
+                        <div class="tooltip-container">
+                            <div class="tooltip-icon mongodb">
+                                <img src="./assets/icons/mongodb.svg" alt="mongodb" class="w-6 h-6 md:w-8 md:h-8" />
+                                <span>M</span>
+                                <div class="tooltip"><span>mongoDB</span></div>
+                            </div>
+                            <div class="tooltip-icon express">
+                                <img src="./assets/icons/express.svg" alt="express" class="w-6 h-6 md:w-8 md:h-8" />
+                                <span>E</span>
+                                <div class="tooltip"><span>Express.js</span></div>
+                            </div>
+                            <div class="tooltip-icon react">
+                                <img src="./assets/icons/react.svg" alt="react" class="w-6 h-6 md:w-8 md:h-8" />
+                                <span>R</span>
+                                <div class="tooltip"><span>React.js</span></div>
+                            </div>
+                            <div class="tooltip-icon node">
+                                <img src="./assets/icons/node.svg" alt="node" class="w-6 h-6 md:w-8 md:h-8" />
+                                <span>N</span>
+                                <div class="tooltip"><span>Node.js</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="index.html#contact" class="inline-block bg-[#23b9eb] text-[#111] px-8 py-2.5 rounded-lg font-bold hover:bg-white transition-all duration-300 shadow-lg shadow-[#23b9eb33]">
+                            Let's Talk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

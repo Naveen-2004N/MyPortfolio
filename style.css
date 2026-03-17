@@ -1,13 +1,18 @@
 #wrapper-canvas canvas {
     max-width: 100%;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .n_logo {
     width: 65px;
     height: 65px;
     border-radius: 14px;    
     font-size:48px;
 border:2px solid #23b9eb;
+}
+.night{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
